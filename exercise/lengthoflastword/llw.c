@@ -1,3 +1,7 @@
+int main(){
+}
+
+
 int lengthOfLastWord(char* s) {
  int n = strlen(s);
     if(n == 0){
@@ -13,5 +17,4 @@ int lengthOfLastWord(char* s) {
 		i--;
 	}
 	return (count);	
-    
-
+}
