@@ -29,6 +29,8 @@ int findMaxConsecutiveOnes(int* nums, int numsSize) {
 	}
 	return(max);
 
+}
+
 int main(){
 	int a[] = {1,0,1};
 	int numsSize = 3;
