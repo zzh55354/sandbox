@@ -6,14 +6,15 @@ typedef struct ListNode {
       struct ListNode *next;
 	}ListNode;
 struct ListNode* reverseList(struct ListNode* head) {
-    struct ListNode *p,*q;
+    ListNode *p,*q;
     p = head->next;
-    head->next = 0;
-    while(q){
-		q = p->next;
-		p->next = head;
-		head = p;
-		p = q;
+    q = p->next;
+    p->next = NULL;
+    while(p){
+		p = q->next;
+		q->next = head->next;
+		head->next = q;
+		q = p;
 	}
 	return(head);
 }
