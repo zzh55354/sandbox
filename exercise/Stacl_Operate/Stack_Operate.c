@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <malloc.h>
-#define maxSize  10
-
+#define maxSize  5
+#define sizeIncrease 2
 typedef struct {
     int *top;
     int *base;
+    int *move;
+    int *min;
     int Stack_Size;
-} Stack;
+}Stack;
 
 
 void Stack_Create(Stack* S) {
@@ -15,39 +17,64 @@ void Stack_Create(Stack* S) {
     S->Stack_Size = maxSize;
 }
 
-void Stack_Push(Stack* S, int x) {
+int Stack_Push(Stack* S, int x) {
 	if((S->top-S->base) >= S->Stack_Size)
 	{
-		printf("%s","overflow");
-		return;
+		S->base = (int *)realloc(S->base,(S->Stack_Size+sizeIncrease)*sizeof(int));
+		S->top = S->base+S->Stack_Size;
+		S->Stack_Size = S->Stack_Size+sizeIncrease;
 	}
 	
 	*(S->top) = x;
 	S->top++;
+	return *(S->top-1);
 }
 
-
-void Stack_Pop(Stack* S) {
-		if((S->top == S->base)){
-			printf("%s","is empty");
-			return;
-		}
-		S->top--;
+/*
+int Stack_Pop(Stack* S) 
+{
+	if((S->top == S->base))
+	{
+		printf("%s","The stack is empty");
+		return 0;
+	}
+	S->top--;
+	return (*(S->top));
 }
 
 int Stack_Top(Stack* S) {
-  return(*(S->top));  
+  if(S->top == S->base)
+  {
+	  printf("%s","The stack is empty, there is not top element");
+  }
+  return (*(S->top-1));  
 }
-
+*/
+int Stack_Min(Stack* S) {
+	S->move = S->base;
+    S->min = S->base;
+	while(S->move <= S->top-1){
+		if(*(S->min) > *(S->move)){
+			S->min = S->move;
+		}
+		S->move++;
+	}
+	return (*(S->min));
+}
 
 
  int main()
 {
 	Stack* obj = (Stack *)malloc(sizeof(Stack));
-	Stack_Create(obj);
-	Stack_Push(obj,3);
-	int p = Stack_Top(obj);
-	printf ("%s", "Top element is: ");
-	printf ("%d", p);
+	Stack_Push(obj, 3);
+	Stack_Push(obj, 4);
+	Stack_Push(obj, 1);
+	Stack_Push(obj, 6);
+	Stack_Push(obj, 2);
+	Stack_Push(obj, 1);
+	int m = Stack_Min(obj);
+	printf ("%s", "Min element is: ");
+	printf ("%d", m);
+	
 	return(0);
 }
