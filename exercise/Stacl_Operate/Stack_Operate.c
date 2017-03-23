@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
-#define maxSize  10
+#define MAXSIZE 10
+#define SIZEINCREASE 2
 
 typedef struct {
     int *top;
@@ -9,7 +10,7 @@ typedef struct {
     int *min;
     int Stack_Size;
 } MinStack;
-#define sizeIncrease 2
+
 /** initialize your data structure here. */
 MinStack* minStackCreate(MinStack *S,int maxSize) {
     S->base = (int *)malloc(maxSize*sizeof(int));
@@ -21,9 +22,9 @@ MinStack* minStackCreate(MinStack *S,int maxSize) {
 void minStackPush(MinStack* S, int x) {
     if((S->top-S->base) >= S->Stack_Size)
 	{
-		S->base = (int *)realloc(S->base,(S->Stack_Size+sizeIncrease)*sizeof(int));
+		S->base = (int *)realloc(S->base,(S->Stack_Size+SIZEINCREASE)*sizeof(int));
 		S->top = S->base+S->Stack_Size;
-		S->Stack_Size = S->Stack_Size+sizeIncrease;
+		S->Stack_Size = S->Stack_Size+SIZEINCREASE;
 	}
 	
 	*(S->top) = x;
