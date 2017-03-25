@@ -68,6 +68,7 @@ int f2() {
 
 int f1() {
     /* always return 0 */
+    // figured out part 1 of the fix
     return 0;
 }
 
