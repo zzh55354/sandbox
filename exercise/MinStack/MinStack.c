@@ -61,7 +61,7 @@ void minStackFree(MinStack* S) {
 	S->base = NULL;
 	S->top = NULL;
 }
-
+//f2 return int
 int f2() {
 	return 1;// always return 1
 }
