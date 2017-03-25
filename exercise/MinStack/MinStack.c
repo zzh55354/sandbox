@@ -60,6 +60,10 @@ void minStackFree(MinStack* S) {
 	S->top = NULL;
 }
 
+int f1() {
+    return 0;
+}
+
 /**
  * Your MinStack struct will be instantiated and called as such:
  * struct MinStack* obj = minStackCreate(maxSize);
