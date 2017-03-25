@@ -1,11 +1,13 @@
-typedef struct {
+#define sizeIncrease 5
+
+ struct {
     int *top;
     int *base;
     int *move;
     int *min;
     int Stack_Size;
 } MinStack;
-#define sizeIncrease 5
+
 /** initialize your data structure here. */
 MinStack* minStackCreate(int maxSize) {
     MinStack *S = malloc(sizeof(MinStack));
@@ -58,6 +60,10 @@ void minStackFree(MinStack* S) {
     free(S->base);
 	S->base = NULL;
 	S->top = NULL;
+}
+
+int f2() {
+	return 1;
 }
 
 int f1() {
