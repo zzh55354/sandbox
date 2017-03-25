@@ -63,6 +63,7 @@ void minStackFree(MinStack* S) {
 }
 //f2 return int
 int f2() {
+    // finally we fix the bug
 	return 3;// always return 3
 }
 
