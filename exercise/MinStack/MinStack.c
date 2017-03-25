@@ -63,7 +63,7 @@ void minStackFree(MinStack* S) {
 }
 
 int f2() {
-	return 1;// always return 1
+	return 2;// always return 2
 }
 
 int f1() {
