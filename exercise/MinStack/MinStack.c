@@ -67,6 +67,7 @@ int f2() {
 }
 
 int f1() {
+    /* always return 0 */
     return 0;
 }
 
