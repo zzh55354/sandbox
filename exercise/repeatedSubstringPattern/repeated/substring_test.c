@@ -38,9 +38,12 @@ bool isRepeated(char *s1,char *s2) {
 bool repeatedSubstringPattern(char* s) {
     char substring[10000];
 
-    int max = strlen(s)/2;
+    int len = strlen(s);
 
-    for (int i = 1; i < max; i ++) {
+    for (int i = 1; i <= len/2; i++) {
+       if (len % i != 0)
+           continue;
+
        getSubStr(s, i, substring);
        if (isRepeated(s, substring))
            return true;
@@ -50,7 +53,7 @@ bool repeatedSubstringPattern(char* s) {
 }
 
 int main() {
-	char a[10]="abcabcab";
+	char a[10]="abab";
 	bool p = repeatedSubstringPattern(a);
 	printf("%d", p);
 
