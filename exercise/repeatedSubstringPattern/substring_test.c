@@ -4,6 +4,7 @@
 bool repeatedSubstringPattern(char* s) {
     char substring[10000];
     substring[0] = s[0];
+    substring[1] = 0;
     int len = strlen(s);
     int substring_len = 1;
     int i = 0;
@@ -14,8 +15,8 @@ bool repeatedSubstringPattern(char* s) {
 		for(int j = 0; j < substring_len; j++) {
 			if(s[i+j] != substring[i]) {
 				substring[substring_len] = s[substring_len];
+				substring[substring_len+1] = 0;
 				substring_len++;
-				i = substring_len;
 				goto AA;
 			}			
 		}
@@ -25,7 +26,7 @@ bool repeatedSubstringPattern(char* s) {
 }
 int main() {
 	
-char a[10]="abcabcabc";
+char a[10]="a";
 char *s = a;
 bool p = repeatedSubstringPattern(s);
 printf("%d", p);
