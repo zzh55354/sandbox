@@ -1,0 +1,16 @@
+OSI Model
+http://www.howtonetwork.org/design/ccda/chapter-1-network-fundamentals/network-fundamentals-the-osi-model/
+
+Ethernet:
+
+An Ethernet Primer:
+http://www.informit.com/articles/article.aspx?p=21320&seqNum=4
+
+Youtube:
+Fun and Easy Ethernet - How the Ethernet Protocol Works
+Fundamental Concepts of Computer Networks: Part 1 - PAN, LAN, MAN & WAN
+Fundamental Concepts of Computer Networks: Part 2 - OSI & TCP/IP Model Explained
+
+Exponential backoff of Ethernet
+CSMA/CD
+https://www.youtube.com/watch?v=IAKncL67Pp4
