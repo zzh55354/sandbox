@@ -473,8 +473,29 @@ void unimplemented(int client)
 
 /**********************************************************************/
 
-int main(void)
+int main(int argc, char** argv)
 {
+<<<<<<< HEAD
+ int server_sock = -1;
+ int port;
+ sscanf(argv[1], "%d", &port);
+ int client_sock = -1;
+ struct sockaddr_in client_name;
+ int client_name_len = sizeof(client_name);
+ //pthread_t newthread;
+
+ server_sock = startup(&port);
+ printf("httpd running on port %d\n", port);
+
+ while (1)
+ {
+  client_sock = accept(server_sock,
+                       (struct sockaddr *)&client_name,
+                       &client_name_len);
+  if (client_sock == -1)
+   error_die("accept");
+  accept_request(client_sock); 
+=======
   int server_sock = -1;
   u_short port = 0;
   int client_sock = -1;
@@ -493,6 +514,7 @@ int main(void)
    if (client_sock == -1)
     error_die("accept");
    accept_request(client_sock); 
+>>>>>>> 76de488337bea182545a9a2e4c845aaa77936d01
 /* if (pthread_create(&newthread , NULL, accept_request, client_sock) != 0)
     perror("pthread_create"); */
   }
