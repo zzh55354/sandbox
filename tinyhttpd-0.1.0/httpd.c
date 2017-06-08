@@ -473,10 +473,11 @@ void unimplemented(int client)
 
 /**********************************************************************/
 
-int main(void)
+int main(int argc, char** argv)
 {
  int server_sock = -1;
- u_short port = 0;
+ int port;
+ sscanf(argv[1], "%d", &port);
  int client_sock = -1;
  struct sockaddr_in client_name;
  int client_name_len = sizeof(client_name);
