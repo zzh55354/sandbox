@@ -1,0 +1,35 @@
+cd, cd ..
+
+pwd
+
+ls, ls -l, ls -a
+
+ps, ps -ef
+
+pstree
+
+find <dir> -name 'abc*.txt'
+
+grep, ps -ef | grep httpd, grep foo `find <dir> -name 'abc*.txt`
+
+touch foo.txt
+
+cat foo.txt
+
+head foo.txt
+
+tail foo.txt, tail -f foo.txt
+
+sudo su rot
+
+df -k .
+
+du -k .
+
+who
+
+whoami
+
+chown
+
+chmod
