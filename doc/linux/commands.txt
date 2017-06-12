@@ -20,7 +20,7 @@ head foo.txt
 
 tail foo.txt, tail -f foo.txt
 
-sudo su rot
+sudo su root
 
 df -k .
 
@@ -33,3 +33,7 @@ whoami
 chown
 
 chmod
+
+netstat, netstat -i, netstat -na
+
+ifconfig
